@@ -48,12 +48,33 @@
   color:rgb(22, 230, 15);
   border-radius: 3px;
   margin-top: 1rem;
-  
-  // border-radius: 50%;;
+  // border: none;
+  border-radius: 5%;
+  padding: 7px;
+
 
 }
+
+.arrowButton{
+  background-color:transparent;
+  color: rgb(22, 10, 10);
+  font-family: sans-serif;
+  font-size: 17px;
+  margin: 20px 0px;
+  color:rgb(22, 230, 15);
+  margin-top: 1rem;
+  
+  text-align: center;
+
+  border-radius: 50%;;
+}
 .inputicon{
-  width: 11px;
+  width: 25px;
+  height: 25px;
+  border: none;
+  padding: 10px;
+
+
 }
 
 .heroicon{
