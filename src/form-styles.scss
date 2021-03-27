@@ -1,0 +1,153 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  // align-items: center;
+  align-content: left;
+  padding: 20px;
+  color: rgb(22, 230, 15);
+}
+// input {
+//   border: 1px solid #d9d9d9;
+//   border-radius: 4px;
+//   box-sizing: border-box;
+//   padding: 10px;
+//   width: 100%;
+// }
+
+// label {
+//   color: #1d1d81;
+//   display: block;
+//   font-family: sans-serif;
+//   font-size: 18px;
+
+//   margin-bottom: 5px;
+// }
+
+// .error {
+//   color: red;
+//   font-family: sans-serif;
+//   font-size: 12px;
+//   height: 30px;
+// }
+.hidden{
+  display: none;
+}
+
+.inputField{
+  padding: 10px;
+  margin: 5px;
+  // height: 30px;
+}
+
+.submitButton {
+  background-color:transparent;
+  color: rgb(22, 10, 10);
+  font-family: sans-serif;
+  font-size: 17px;
+  margin: 20px 0px;
+  color:rgb(22, 230, 15);
+  border-radius: 3px;
+  margin-top: 1rem;
+  
+  // border-radius: 50%;;
+
+}
+.inputicon{
+  width: 11px;
+}
+
+.heroicon{
+  height: 5rem;
+ 
+  position: relative;
+  // text-align: center;
+ 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.form-group{
+  background-color: transparent;
+  margin-bottom: 3rem;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  width: 30rem;
+  height: 5rem;
+}
+.label{
+  display: flex;
+  align-items: flex-start;
+  align-items: left;
+  padding: 10px;
+}
+
+.error{
+  color: red;
+  font-size:18px;
+  font-weight: 700;;
+}
+
+.userDetails{
+  color: rgb(255, 250, 250);
+  font-weight: 600;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+    
+    .image {
+      width: 30rem;
+      height: 9rem;
+    
+      img {
+        width: 100%;
+        height: 110%;
+      }
+    }
+    
+  
+  }
+
+//max-width: 499 == valid till 499
+//min-width: 499 == valid from 499
+@media (min-width: 120px) {
+        // .container {
+        .form-group {
+      
+      // background-color: rgb(51, 15, 51);
+      width: 15rem;
+    //   img {
+    //       width: 100%;
+    //   }
+    .image {
+      margin: 20px auto;
+      width: 15rem;
+    //   max-width: 320px;
+    }
+      
+    }
+  
+  }
+
+
+// .contianer-hook-form{
+//   padding: 20px;
+//   background-color: rgb(4, 109, 100);
+// }
+
+
+// .simple-hook-form {
+//   display:flex;
+//   flex-direction: column;
+//   align-items: center;
+//   }
+
+
