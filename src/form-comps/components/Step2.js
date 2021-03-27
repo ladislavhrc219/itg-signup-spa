@@ -16,14 +16,14 @@ const schema = yup.object().shape({
     
     // email: yup.string().email().required("Email is required"),
 
-      age: yup.number().positive().min(18),
+    //   age: yup.number().positive().nullable(false).min(18),
     // phoneNumber: yup.string()
     // .required("Phone number is required")
     // .matches(
     // /^([0]{44}|\+?[234]{3})([7-9]{1})([0|1]{1})([\d]{1})([\d]{7})$/g,
     //     "Invalid phone number"
     // ),
-    age: yup.number().required().min(18, "Min age is ${min}").label("Age")
+    age: yup.number().required().typeError("Please enter a valid number").min(18, "Min age is ${min}").label("Age")
     });
 
 

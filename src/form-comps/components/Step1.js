@@ -20,7 +20,7 @@ const schema = yup.object().shape({
     //   age: yup.number().positive().min(18),
     phoneNumber: yup.string()
     .required("Phone number is required")
-    .matches(phoneRegExp, 'Phone number is not valid')
+    .matches(phoneRegExp, 'Please enter a valid phone number')
 
     // phoneNumber: yup.string().
     // .matches(
