@@ -30,7 +30,7 @@ export default function Confirmation( {setStep, formValues,setFormValues} ){
 
 
         <>
-           
+           <div className="confirm-container">        
            <h1> User  information </h1>
             {/* <pre> {JSON.stringify(formValues)} </pre> */}
 
@@ -73,6 +73,9 @@ export default function Confirmation( {setStep, formValues,setFormValues} ){
                 </div>
 
                 </form>
+
+
+                </div>
 
 
 
