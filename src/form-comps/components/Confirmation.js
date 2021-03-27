@@ -35,6 +35,11 @@ export default function Confirmation( {setStep, formValues,setFormValues} ){
            <p> <svg className="heroicon-userInfo"xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
 </svg></p>
+
+
+{/* <svg className="heroicon-userInfo" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+</svg> */}
            <h1> User  information </h1>
 
 
@@ -52,19 +57,22 @@ export default function Confirmation( {setStep, formValues,setFormValues} ){
 
                     
 
-                    <p>  Username: 
+                    <h4>  Username: 
                        <span className="userDetails"> {formValues.fullName}   </span>  
-                          </p>
-                    <p>  Phone number:  
+                        
+                          </h4>
+                    <h4>  Phone number:  
                         <span className="userDetails">     {formValues.phoneNumber}    </span>
                      
-                        </p>
-                    <p>  Email: 
+                        </h4>
+
+                    <h4>  Email: 
                       <span className="userDetails">    {formValues.email}   </span> 
-                           </p>
-                    <p>  Age: 
+                           </h4>
+
+                    <h4>  Age: 
                    <span className="userDetails">      {formValues.age}   </span> 
-                          </p>
+                          </h4>
 
                     
 
