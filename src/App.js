@@ -31,7 +31,9 @@ function App() {
         <h3> You must be 18 or over </h3>
 
         <p>
-         By signing up, you agree to our Terms, Data Policy 
+         By signing up, you agree to our 
+         <br/> 
+         Terms, Data Policy 
          and Cookies Policy.
         </p>
         
