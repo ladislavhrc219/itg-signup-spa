@@ -31,7 +31,7 @@ const schema = yup.object().shape({
     });
 
 
-export default function StepOne({setStep,  formValues,setFormValues}){
+export default function StepOne({setStep, formValues, setFormValues}){
 
  
 
@@ -52,50 +52,6 @@ export default function StepOne({setStep,  formValues,setFormValues}){
 
 
 
-    // function getUserValues  (e) {
-    //     e.preventDefault();
-    //     let UserData = {
-    //         fullname: e.target.value
-    //     }
-
-
-    // }
-
-    // function onSubmit (UserData){
-    //     console.log("useRData", UserData)
-    // }
-
-    // let shit = async(e) =>{
-    //     e.preventDefault();
-    //         // you not getting variables, you want ot get object!
-    //     //oyu can tie the object to a variable.
-    //     let showUser = {
-    //         fullname: e.target.value,
-    //         phoneNumber: e.target.value
-    //     }
-    // }
-
-    // const onSubmit = (showUser)=> {
-    //     console.log(showUser)
-    // }
-
-
-
-//   const createUserProfile = async (e)=>{
-//             e.preventDefault();
-//             let userData = {
-//                 fullname: e.target[0].value,
-//                 phoneNumber: e.target[1].value,
-//                 // password: e.target[2].value,
-//                 // age: e.target[3].value,
-//             };
-            
-    
-//         };
-    
-//         const onSubmit = (userData) => {
-//             console.log(userData)
-//         }  
 
     return (
         <> 
@@ -123,7 +79,7 @@ export default function StepOne({setStep,  formValues,setFormValues}){
 {/* <svg className="inputicon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
 </svg> */}
-          Username </label>
+          Full Name </label>
         <input className="inputField" type="text" name="fullName" placeholder="Your full name..." 
       ref={register()} /> 
       
