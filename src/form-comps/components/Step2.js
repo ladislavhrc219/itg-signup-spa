@@ -11,8 +11,7 @@ const schema = yup.object().shape({
     // .min(4, "Too Short!")
     // .max(30, "Too Long!")
     // .required("Full name is required"),
-    email: yup.string().email()
-    .required("Email is required"),
+    email: yup.string().email().required("Email is required"),
     
     // email: yup.string().email().required("Email is required"),
 
@@ -74,25 +73,23 @@ export default function StepTwo( { setStep, formValues,setFormValues} ){
 
             <div className="form-group"> 
             <label className="label"> Email</label> 
-            <input 
-            className="inputField"
+            <input className="inputField"
             type="text"
              name="email" 
              placeholder="Email..."
              ref={register()} />
             </div>
-            {/* className="error" */}
-            {errors.email && <p className="error"> {errors.email.message} </p>}
+            {errors.email && <p className="email-error"> {errors.email.message} </p>}
     
             <div className="form-group"> 
             <label className="label"> Age</label>
             <input 
                     className="inputField"
-                    type="age" 
+                    type="number" 
                     name="age" 
                     placeholder="Age" 
                     // ref={register ({required:true, min:18})}
-                    ref={register({min: 18, message: "too young for this game..."})} 
+                    ref={register()} 
                     />
                   {errors.age && <p className="error"> {errors.age.message} </p>}
                   {/* {errors.age?.message} */}
