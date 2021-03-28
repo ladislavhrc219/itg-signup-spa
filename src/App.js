@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 // import Validation from './form-comps/Validation.js';
-import Form from './form-comps/Form.jsx'
+import Form from './form-comps/Form.js'
 import "./form-styles.scss";
 
 function App() {

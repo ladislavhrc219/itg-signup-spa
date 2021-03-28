@@ -74,12 +74,7 @@ export default function StepOne({setStep, formValues, setFormValues}){
         className="form-container"> 
         
         <div className="form-group"> 
-        <label className="label"> 
-        
-{/* <svg className="inputicon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-</svg> */}
-          Full Name </label>
+        <label className="label">    Full Name </label>
         <input className="inputField" type="text" name="fullName" placeholder="Your full name..." 
       ref={register()} /> 
       
