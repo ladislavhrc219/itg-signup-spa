@@ -1,33 +1,23 @@
 import React from 'react';
-
+import Axios from 'axios';
 import {useForm} from 'react-hook-form';
 
 import './../../form-styles.scss';
 
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
-// import "yup-phone";
+
+
+
 
 const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
 
 const schema = yup.object().shape({
     fullName: yup.string().required()
-    // .min(4, "Too Short!")
     .required("Full name is required"),
-    
-    // email: yup.string().email().required("Email is required"),
-
-    //   age: yup.number().positive().min(18),
     phoneNumber: yup.string()
     .required("Phone number is required")
     .matches(phoneRegExp, 'Please enter a valid phone number')
-
-    // phoneNumber: yup.string().
-    // .matches(
-    // /^([]{44}|\+?[234]{3})([7-9]{1})([0|1]{1})([\d]{1})([\d]{7})$/g,
-    //     "Invalid phone number")
-        // ,
-    // age: yup.number().required().min(18, "Min age is ${min}").label("Age")
     });
 
 
@@ -75,8 +65,12 @@ export default function StepOne({setStep, formValues, setFormValues}){
         
         <div className="form-group"> 
         <label className="label">    Full Name </label>
-        <input className="inputField" type="text" name="fullName" placeholder="Your full name..." 
-      ref={register()} /> 
+        <input 
+        className="inputField" 
+        type="text" 
+        name="fullName" 
+        placeholder="Your full name..." 
+        ref={register()} /> 
       
        
            {errors.fullName && <p className="error"> {errors.fullName.message}</p>} 
@@ -85,7 +79,7 @@ export default function StepOne({setStep, formValues, setFormValues}){
 
 
            <div className="form-group"> 
-        <label className="label"> Phone number </label>
+        <label className="label"> Phone Number </label>
         <input
         className="inputField"
         type="number"

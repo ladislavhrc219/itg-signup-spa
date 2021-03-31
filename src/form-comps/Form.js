@@ -1,108 +1,60 @@
-import React, {useState} from 'react'
+import React, { useEffect ,useState} from 'react'
 import './../form-styles.scss';
-import {useForm} from 'react-hook-form';
+
+// import { useStep } from 'react-hooks-helper';
 
 import StepOne from "./components/Step1";
 import StepTwo from "./components/Step2";
 import Confirmation from "./components/Confirmation";
 import Congratulation from './components/Congratulation';
 
+
 export default function Form() {
   
+  // const { stepp, navigation } = useStep({ initialStep: 0 });
   const [step, setStep] = useState(1);
   const [formValues, setFormValues] = useState([]);
  
-  const [prevStep, setPrevStep] = useState(1);
+
+  // useEffect(() => {
+  //   fetch("/api")
+  //     .then((formValues) => formValues.json())
+  //     .then((data) => setFormValues(data.message));
+  //     console.log(data)
+  // }, []);
 
 
   return (
     <div>
       {/* <form className="form-container" onSubmit={handleSubmit(onSubmit)}>  */}
 
-   
-
-        {/* <h2> ITG form </h2> */}
         <p className="hidden"> Step {step} of 3  </p>
 
-        {/* <button > PrevScreen {prevStep} </button> */}
      
-        {/* pass the setStep doesn to StepOne */}
         {step == 1 && (<StepOne 
-        
+        // navigation={navigation}
         setStep={setStep} 
         formValues={formValues} 
         setFormValues={setFormValues}/>
          )}
 
-        {step == 2 && ( 
-        <StepTwo
+        {step == 2 && (<StepTwo
         setStep={setStep} 
         formValues={formValues} 
         setFormValues={setFormValues}
-        // prevStep={prevStep}
-        // setPrevStep={setPrevStep}
         />
          )}
       
-       {step == 3 && 
-       (  
-         <Confirmation
+       {step == 3 && (<Confirmation
         setStep={setStep} 
         formValues={formValues} 
         setFormValues={setFormValues}
         />
          )}
 
-{step == 4 && (  
-         <Congratulation/>
-        // setStep={setStep} 
-        // formValues={formValues} 
-        // setFormValues={setFormValues}
-        
+        {step == 4 && (<Congratulation/>
          )}
-      
-        {/* <div className="form-group"> 
-        <label>  Full name</label>
-        <input type="text" name="fullname" placeholder="Your full name..." 
-      ref={register({required: true,  minLength:4})} /> 
-           </div> */}
-
-
-           {/* <div className="form-group"> 
-        <label> Phone number </label>
-        <input
-        type="number"
-        name='phoneNumber'
-        placeholder="Phone number"
-        ref={register()}
-        /> 
-        {errors.phoneNumber && <p> {errors.phoneNumber.message} </p>}
-
-        </div> */}
-
-
-
-        {/* <div className="form-group"> 
-        <label> Email</label> 
-      <input type="text" name="email" placeholder="Email..." ref={register()} />
-        </div>
-
-        <div className="form-group"> 
-        <label> Age</label>
-        <input 
-                type="age" 
-                name="age" 
-                placeholder="Age" 
-                // ref={register ({required:true, min:18})}
-                ref={register({message: "too young for this game..."})} 
-                />
-              {/* {errors.age && <p> {errors.age.message} </p>} */}
-          {/* </div> */} 
-        
-        
-         {/* </form> */}
-      
-    </div>
+      </div>
   )
 }
 
