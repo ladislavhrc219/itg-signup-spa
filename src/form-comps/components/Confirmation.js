@@ -18,6 +18,8 @@ export default function Confirmation( {setStep, formValues,setFormValues} ){
         });
         setStep(4);
       console.log(values);
+
+      
     }
 
     // const onSubmit=(values)=>{ console.log(values); }
@@ -26,6 +28,22 @@ export default function Confirmation( {setStep, formValues,setFormValues} ){
         e.preventDefault();
           setStep(2)       
         }
+
+
+    const submitHandler = (event) => {
+        fetch('http://localhost:3003/user', {
+            method: 'POST',
+            body: JSON.stringify({formValues}),
+        })
+            .then((res) => res.json())
+            .then((result) => {
+            console.log(result)
+            formValues('')
+            })
+            .catch((err) => console.log('error'))
+    }
+   
+        
 
     return (
 
@@ -58,40 +76,24 @@ export default function Confirmation( {setStep, formValues,setFormValues} ){
 
                 <form  onSubmit={handleSubmit(onSubmit) } 
                 className="form-container"> 
-
-                    
-                   
-
-
-
-                    
-
                     <h4>  Username: 
-                       <span className="userDetails"> {formValues.fullName}   </span>  
-                        
+                       <span className="userDetails"> {formValues.fullName}   </span>               
                           </h4>
                     <h4>  Phone Number:  
                         <span className="userDetails">     {formValues.phoneNumber}    </span>
-                     
                         </h4>
-
                     <h4>  Email: 
                       <span className="userDetails">    {formValues.email}   </span> 
                            </h4>
-
                     <h4>  Age: 
                    <span className="userDetails">      {formValues.age}   </span> 
                           </h4>
-
-                    
-
-                <div> 
+                          <div> 
                             <button 
+                            onClick={submitHandler}
                             className="submitButton"
                             type="submit"> 
-
                             Submit  
-                            
                             </button>
                 </div>
 
