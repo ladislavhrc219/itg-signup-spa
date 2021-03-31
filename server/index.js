@@ -8,8 +8,8 @@ const bodyParser = require("body-parser");
 // connection to database
 const dbconnection = mysql.createConnection({
     host: "localhost",
-    user: "root",
-    password: "bitnami",
+    user: "",
+    password: "",
     database: "itgdatabase"
 
 })
