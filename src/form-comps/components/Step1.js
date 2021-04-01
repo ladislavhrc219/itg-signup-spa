@@ -7,25 +7,21 @@ import './../../form-styles.scss';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 
-
-
-
 const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
 
 const schema = yup.object().shape({
-    fullName: yup.string().required()
-    .required("Full name is required"),
-    phoneNumber: yup.string()
-    .required("Phone number is required")
-    .matches(phoneRegExp, 'Please enter a valid phone number')
-    });
+        fullName: yup.string().required()
+        .required("Full name is required"),
+        phoneNumber: yup.string()
+        .required("Phone number is required")
+        .matches(phoneRegExp, 'Please enter a valid phone number')
+        });
 
 
 export default function StepOne({setStep, formValues, setFormValues}){
 
  
-
-  const { register, handleSubmit, errors } = useForm({resolver: yupResolver(schema)});
+const { register, handleSubmit, errors } = useForm({resolver: yupResolver(schema)});
 
   function onSubmit(values){
       setFormValues({
@@ -35,12 +31,6 @@ export default function StepOne({setStep, formValues, setFormValues}){
       setStep(2);
     console.log(values);
     }
-
-
-    // useEffect prevStep
-
-
-
 
 
     return (
@@ -93,19 +83,22 @@ export default function StepOne({setStep, formValues, setFormValues}){
 
             <div> 
 
-        
+         
             <button 
             className="arrowButton"
             type="submit"> 
             
-<svg className="arrow-button-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-</svg>
+            {/* single arrow */}
+            {/* <svg className="arrow-button-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg> */}
+
+            <svg className="arrow-button-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+            </svg>
             
              </button>
             </div>
-
-            {/* <button  > Prev Step</button> */}
 
          </form>
 
