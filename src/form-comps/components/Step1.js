@@ -48,7 +48,9 @@ const { register, handleSubmit, errors } = useForm({resolver: yupResolver(schema
             </svg>
         </div>
 
-        <h4> Step One</h4>
+        <h4> STEP 1 OF 2</h4>
+        
+        <h3> Please fill in your details... </h3>
 
         <form  onSubmit={handleSubmit(onSubmit) } 
         className="form-container"> 
