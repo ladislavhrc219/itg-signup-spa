@@ -1,18 +1,24 @@
 import React from 'react';
-import Axios from 'axios';
+// import Axios from 'axios';
 import {useForm} from 'react-hook-form';
 
 import './../../form-styles.scss';
 
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
+// import schema from "./Schema";
 
 const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
 
 const schema = yup.object().shape({
-        fullName: yup.string().required()
+        fullName: 
+        yup
+        .string()
+        .required()
         .required("Full name is required"),
-        phoneNumber: yup.string()
+        phoneNumber: 
+        yup
+        .string()
         .required("Phone number is required")
         .matches(phoneRegExp, 'Please enter a valid phone number')
         });

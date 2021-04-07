@@ -1,4 +1,4 @@
-import React, { useEffect ,useState} from 'react'
+import React, { useState} from 'react'
 import './../form-styles.scss';
 
 // import { useStep } from 'react-hooks-helper';
@@ -31,28 +31,28 @@ export default function Form() {
         <p className="hidden"> Step {step} of 3  </p>
 
      
-        {step == 1 && (<StepOne 
+        {step === 1 && (<StepOne 
         // navigation={navigation}
         setStep={setStep} 
         formValues={formValues} 
         setFormValues={setFormValues}/>
          )}
 
-        {step == 2 && (<StepTwo
+        {step === 2 && (<StepTwo
         setStep={setStep} 
         formValues={formValues} 
         setFormValues={setFormValues}
         />
          )}
       
-       {step == 3 && (<Confirmation
+       {step === 3 && (<Confirmation
         setStep={setStep} 
         formValues={formValues} 
         setFormValues={setFormValues}
         />
          )}
 
-        {step == 4 && (<Congratulation/>
+        {step === 4 && (<Congratulation/>
          )}
       </div>
   )

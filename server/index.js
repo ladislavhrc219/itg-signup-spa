@@ -1,45 +1,69 @@
-const express = require('express');
-const app = express();
+const express = require("express");
 const mysql = require('mysql');
 const cors = require('cors');
 const bodyParser = require("body-parser");
 
+const app = express();
+
+const SELECT_ALL_USERS = "SELECT * FROM signup";
+
+app.use(cors());
+app.use(express.json());
+
+const validation = require('./Middlewares/validation');
+const userSchema = require('./Validations/signupValidation');
 
 // connection to database
-const dbconnection = mysql.createConnection({
-    host: "localhost",
-    user: "",
-    password: "",
+const connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'bitnami',
     database: "itgdatabase"
 
 })
 
-app.use(cors());
+// connection.connect(err =>{
+//     if (err){
+//     return err;
+//     }
+// });
 
 
+// app.get()
 
-// simple route
-app.get("/", (req, res) => {
-  res.json({ message: " Hi." });
+app.get('/users', (req, res) =>{
+    connection.query(SELECT_ALL_USERS, (err,results)=>{
+        if(err){
+            return res.send(err)
+        } else{
+            return res.json({
+                data: results
+            })
+        }
+    });
 });
 
-// INSERT INTO `users` (`id`, `email`, `password`) VALUES
-// (1, 'billy@example.com', 'password1'),
-// (2, 'adrian@example.com', 'password2');
 
-app.get("/data", (req, res)=> {
-    
-    const sqlInsert = "INSERT INTO `signup` (`fullName`, `phoneNumber`, `email`, `age`) VALUES (?, ?, ?, ?, ?)"
-    dbconnection.query(sqlInsert, (err, res)=> {
-        
-        res.send("...nodemon... of backend");
 
-    })
 
-});
+
+// app.post("/user", (req, res)=>{
+//     res.status(200).send(req.body);    
+
+// })
+
+
+// // VALIDATION USERSCHEMA 
+// app.post("/signup", validation(userSchema), (req, res)=> {
+//     res.status(200).send(req.body);
+//     // console.log("bhoa")
+// });
+
+
 
 
 
 app.listen(3003, ()=>{
-    console.log("port 3003");
+    console.log('idiot server running ')
+    // send("he")
 })

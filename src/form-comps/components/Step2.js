@@ -1,5 +1,3 @@
-import React, {useEffect} from 'react';
-
 import {useForm} from 'react-hook-form';
 import './../../form-styles.scss';
 
@@ -9,7 +7,7 @@ import * as yup from "yup";
 
 const schema = yup.object().shape({
     email: yup.string().email().required("Email is required"),
-    age: yup.number().required().typeError("Please enter a valid number").min(18, "Min age is ${min}").label("Age")
+    age: yup.number().required().typeError("Please enter a valid number").min(18, "Min age is 18").label("Age")
     });
 
 export default function StepTwo( {setStep, formValues,setFormValues} ){

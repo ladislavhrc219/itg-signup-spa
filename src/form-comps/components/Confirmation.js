@@ -40,7 +40,7 @@ export default function Confirmation( {setStep, formValues,setFormValues} ){
             console.log(result)
             formValues('')
             })
-            .catch((err) => console.log('error'))
+            .catch((err) => console.log('fatal_error'))
     }
    
         
