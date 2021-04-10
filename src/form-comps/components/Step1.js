@@ -1,15 +1,16 @@
 import React from 'react';
 // import Axios from 'axios';
+//import UseForm
 import {useForm} from 'react-hook-form';
-
 import './../../form-styles.scss';
 
 import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from "yup";
+import * as yup from "yup"; //for  schema validation
 // import schema from "./Schema";
 
 const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
 
+//pass schmea to yupResolver
 const schema = yup.object().shape({
         fullName: 
         yup
@@ -26,14 +27,16 @@ const schema = yup.object().shape({
 
 export default function StepOne({setStep, formValues, setFormValues}){
 
- 
-const { register, handleSubmit, errors } = useForm({resolver: yupResolver(schema)});
+//need register, handleSubmit errors for useForm 
+const { register, handleSubmit, errors } = useForm({resolver: yupResolver(schema)}); 
 
+  
   function onSubmit(values){
       setFormValues({
-          ...formValues, 
-          ...values,
+          ...formValues,  //prev formValues
+          ...values, //prev values
       });
+      //set the step to 2 
       setStep(2);
     console.log(values);
     }
@@ -47,8 +50,6 @@ const { register, handleSubmit, errors } = useForm({resolver: yupResolver(schema
         
 
         <div className="heroicon" > 
-
-
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
             </svg>
@@ -58,18 +59,19 @@ const { register, handleSubmit, errors } = useForm({resolver: yupResolver(schema
         
         <h3> Please fill in your details... </h3>
 
+            {/* pass in the onSubmit function to handleSubmit */}
         <form  onSubmit={handleSubmit(onSubmit) } 
         className="form-container"> 
         
         <div className="form-group"> 
-        <label className="label">    Full Name </label>
+        <label className="label"> Full Name </label>
         <input 
         className="inputField" 
         type="text" 
         name="fullName" 
         placeholder="Your full name..." 
         ref={register()} /> 
-      
+      {/* all inputs need register  */}
        
            {errors.fullName && <p className="error"> {errors.fullName.message}</p>} 
            </div>

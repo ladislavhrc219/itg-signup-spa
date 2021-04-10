@@ -1,8 +1,6 @@
 import React, { useState} from 'react'
 import './../form-styles.scss';
 
-// import { useStep } from 'react-hooks-helper';
-
 import StepOne from "./components/Step1";
 import StepTwo from "./components/Step2";
 import Confirmation from "./components/Confirmation";
@@ -10,8 +8,6 @@ import Congratulation from './components/Congratulation';
 
 
 export default function Form() {
-  
-  // const { stepp, navigation } = useStep({ initialStep: 0 });
   const [step, setStep] = useState(1);
   const [formValues, setFormValues] = useState([]);
  
@@ -28,11 +24,9 @@ export default function Form() {
     <div>
       {/* <form className="form-container" onSubmit={handleSubmit(onSubmit)}>  */}
 
-        <p className="hidden"> Step {step} of 3  </p>
 
-     
+     {/* Passing down setStep, formValues, setFormValues */}
         {step === 1 && (<StepOne 
-        // navigation={navigation}
         setStep={setStep} 
         formValues={formValues} 
         setFormValues={setFormValues}/>

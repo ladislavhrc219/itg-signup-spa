@@ -17,7 +17,7 @@ export default function Confirmation( {setStep, formValues,setFormValues} ){
             ...values,
         });
         setStep(4);
-      console.log(values);
+      console.log(values, formValues);
 
       
     }
