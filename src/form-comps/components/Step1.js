@@ -5,11 +5,10 @@ import {useForm} from 'react-hook-form';
 import './../../form-styles.scss';
 
 import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from "yup"; //for  schema validation
+import * as yup from "yup";
 // import schema from "./Schema";
 
 const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
-
 //pass schmea to yupResolver
 const schema = yup.object().shape({
         fullName: 
@@ -21,14 +20,17 @@ const schema = yup.object().shape({
         yup
         .string()
         .required("Phone number is required")
-        .matches(phoneRegExp, 'Please enter a valid phone number')
+        .matches(phoneRegExp, 'Please enter a valid phone number'),
+        // dob: 
+        // yup
+        // .string()
+        // .required('Date of Birth is required')
+        // .matches(/^\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$/, 'Date of Birth must be a valid date in the format YYYY-MM-DD'),
         });
 
-
 export default function StepOne({setStep, formValues, setFormValues}){
-
-//need register, handleSubmit errors for useForm 
-const { register, handleSubmit, errors } = useForm({resolver: yupResolver(schema)}); 
+    //need register, handleSubmit errors for useForm 
+    const { register, handleSubmit, errors } = useForm({resolver: yupResolver(schema)}); 
 
   
   function onSubmit(values){
@@ -36,7 +38,7 @@ const { register, handleSubmit, errors } = useForm({resolver: yupResolver(schema
           ...formValues,  //prev formValues
           ...values, //prev values
       });
-      //set the step to 2 
+      //chagne state step to 2 
       setStep(2);
     console.log(values);
     }
@@ -71,8 +73,6 @@ const { register, handleSubmit, errors } = useForm({resolver: yupResolver(schema
         name="fullName" 
         placeholder="Your full name..." 
         ref={register()} /> 
-      {/* all inputs need register  */}
-       
            {errors.fullName && <p className="error"> {errors.fullName.message}</p>} 
            </div>
 
@@ -90,6 +90,15 @@ const { register, handleSubmit, errors } = useForm({resolver: yupResolver(schema
         {errors.phoneNumber && <p className="error"> {errors.phoneNumber.message} </p>}
 
         </div>
+
+
+
+        {/* <div className="form-group"> 
+        <label className="label"> Date of Birth: </label>
+        <input className="inputField" type="number"  name='dob' placeholder="Your date of birth..."
+        ref={register()}/>  {errors.dob && <p className="error"> {errors.dob.message} </p>}
+        </div> */}
+
 
             <div> 
 

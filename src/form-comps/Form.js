@@ -3,27 +3,16 @@ import './../form-styles.scss';
 
 import StepOne from "./components/Step1";
 import StepTwo from "./components/Step2";
-import Confirmation from "./components/Confirmation";
-import Congratulation from './components/Congratulation';
+import UserInfo from "./components/UserInfo";
+import UserSummary from './components/UserSummary';
 
 
 export default function Form() {
   const [step, setStep] = useState(1);
   const [formValues, setFormValues] = useState([]);
  
-
-  // useEffect(() => {
-  //   fetch("/api")
-  //     .then((formValues) => formValues.json())
-  //     .then((data) => setFormValues(data.message));
-  //     console.log(data)
-  // }, []);
-
-
   return (
     <div>
-      {/* <form className="form-container" onSubmit={handleSubmit(onSubmit)}>  */}
-
 
      {/* Passing down setStep, formValues, setFormValues */}
         {step === 1 && (<StepOne 
@@ -39,14 +28,14 @@ export default function Form() {
         />
          )}
       
-       {step === 3 && (<Confirmation
+       {step === 3 && (<UserInfo
         setStep={setStep} 
         formValues={formValues} 
         setFormValues={setFormValues}
         />
          )}
 
-        {step === 4 && (<Congratulation/>
+        {step === 4 && (<UserSummary/>
          )}
       </div>
   )

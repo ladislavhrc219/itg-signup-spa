@@ -1,8 +1,7 @@
-import './App.css';
 import React from 'react';
-// import Validation from './form-comps/Validation.js';
 import Form from './form-comps/Form.js'
 import "./form-styles.scss";
+// import './App.css';
 
 function App() {
   return (
@@ -17,7 +16,6 @@ function App() {
         </p>
 
         <Form/>
-        
 
         <p> <svg className="heroicon-18" height="35" width="35" viewBox="0 0 512 512" 
          xmlns="http://www.w3.org/2000/svg" 

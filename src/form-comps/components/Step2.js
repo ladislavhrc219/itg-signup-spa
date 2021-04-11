@@ -1,7 +1,6 @@
 import {useForm} from 'react-hook-form';
 import './../../form-styles.scss';
 
-
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 
@@ -19,22 +18,13 @@ export default function StepTwo( {setStep, formValues,setFormValues} ){
             ...values
         });
         setStep(3);
-
-        // const boo = useEffect(()=>{
-
-
-        // })
       console.log(values);
     }
-
-    
 
     const handleClick = (e) =>{
       e.preventDefault();
         setStep(1)       
       }
-
-     
 
     return (
         <> 
@@ -73,20 +63,12 @@ export default function StepTwo( {setStep, formValues,setFormValues} ){
                     type="number" 
                     name="age" 
                     placeholder="Age" 
-                    // ref={register ({required:true, min:18})}
                     ref={register()} 
                     />
                   {errors.age && <p className="error"> {errors.age.message} </p>}
-                  {/* {errors.age?.message} */}
               </div>
               <div> 
-           <button 
-            className="arrowButton"
-            type="submit"> 
-            {/* single arow */}
-               {/* <svg className="arrow-button-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg> */}
+           <button className="arrowButton" type="submit"> 
             <svg className="arrow-button-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 5l7 7-7 7M5 5l7 7-7 7" />
             </svg>             
