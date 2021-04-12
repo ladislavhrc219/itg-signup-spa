@@ -33,7 +33,5 @@ describe ('<UserInfo/>', () => {
 
 
 // Jest encountered an unexpected token
-
 // This usually means that you are trying to import a file which Jest cannot parse, e.g. it's not plain JavaScript.
-
 // By default, if Jest sees a Babel config, it will use that to transform your files, ignoring "node_modules".

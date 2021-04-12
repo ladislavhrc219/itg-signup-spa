@@ -2,7 +2,7 @@ function validation(schema) {
     return async(req, res, next)=>{
         try {
             //validate fucntion => request body
-               const reqbodyValidation = await schema.validate(req.body); //if req valid, got to next();
+               const reqbodyValidation = await schema.validate(req.body); 
                req.body = reqbodyValidation;
                 next();
         }
