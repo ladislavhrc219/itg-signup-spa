@@ -2,8 +2,6 @@ import React from 'react';
 import {shallow} from 'enzyme';
 import {Step1} from './../form-comps/components/Step1';
 import {UserInfo} from './../form-comps/components/UserInfo';
-// import { transformToNestObject } from 'react-hook-form';
-// import MyComponent from './MyComponent';
 
 describe('<Step1/>', () => {
     it('has an input field', () => {
@@ -23,7 +21,7 @@ describe('<Step1/>', () => {
 })
 
 describe ('<UserInfo/>', () => {
-    it('testing submit button'),()=>{
+    it('testing Submit button'),()=>{
         let wrapper = shallow(<UserInfo/>)
         const button = <button> submit </button>
         expect(wrapper.containsMatchingElement(button)).toBe(true);
