@@ -5,8 +5,9 @@ const app = express();
 app.use(express.json());
 app.use('/', router);
 
+
 app.listen(3003, ()=>{
-    console.log('..server is running ')
+    console.log('the server is running ')
     // send("he")
 })
 

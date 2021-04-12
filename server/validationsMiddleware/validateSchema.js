@@ -1,10 +1,12 @@
+// express middleware t validate req.body 
 function validation(schema) {
     return async(req, res, next)=>{
         try {
-            //validate fucntion => request body
+            //validate fucntion => request.body
                const reqbodyValidation = await schema.validate(req.body); 
-               req.body = reqbodyValidation;
+            //    req.body = reqbodyValidation;
                 next();
+                //if  req.body not valid throw error
         }
         catch(err){
             return res.status(400).json({err});
